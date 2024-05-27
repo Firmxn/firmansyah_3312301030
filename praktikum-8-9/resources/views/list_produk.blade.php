@@ -32,30 +32,30 @@
         </table>
 
 
-        <div class="mt-6 border border-collapse">
+        <div class="mt-6 border border-collapse text-blue-950">
             <div class="bg-blue-950 text-white text-center p-4">
                 <h1>Input Produk</h1>
             </div>
-            <form action="{{ route('produk.simpan') }}" method="post" class="m-4">
+            <form action="{{ route('produk.simpan') }}" method="post" class="m-4 bg-white"">
                 @csrf
-                <table class="table">
-                    <tr>
-                        <td>Nama:</td>
-                        <td colspan="3"><input type="text" class="form-control w-full" id="nama" name="nama"></td>
-                    </tr>
-                    <tr>
-                        <td>Deskripsi:</td>
-                        <td colspan="3"><textarea type="text" class="form-control w-full" id="deskripsi" name="deskripsi"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td>Harga:</td>
-                        <td colspan="3"><input type="number" class="form-control w-full" id="harga" name="harga"></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <table class=" table">
+                <tr>
+                    <td>Nama:</td>
+                    <td colspan="3"><input type="text" class="form-control w-full bg-gray-200" id="nama" name="nama"></td>
+                </tr>
+                <tr>
+                    <td>Deskripsi:</td>
+                    <td colspan="3"><textarea type="text" class="form-control w-full bg-gray-200" id="deskripsi" name="deskripsi"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Harga:</td>
+                    <td colspan="3"><input type="number" class="form-control w-full bg-gray-200" id="harga" name="harga"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
                 </table>
-                <div class=" flex justify-end">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                <div class="flex justify-end">
+                    <button type="submit" class="btn bg-blue-950 text-white">Simpan</button>
                 </div>
             </form>
         </div>
