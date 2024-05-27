@@ -30,8 +30,36 @@
                 @endforeach
             </tbody>
         </table>
-    </div>
 
+
+        <div class="mt-6 border border-collapse">
+            <div class="bg-blue-950 text-white text-center p-4">
+                <h1>Input Produk</h1>
+            </div>
+            <form action="{{ route('produk.simpan') }}" method="post" class="m-4">
+                @csrf
+                <table class="table">
+                    <tr>
+                        <td>Nama:</td>
+                        <td colspan="3"><input type="text" class="form-control w-full" id="nama" name="nama"></td>
+                    </tr>
+                    <tr>
+                        <td>Deskripsi:</td>
+                        <td colspan="3"><textarea type="text" class="form-control w-full" id="deskripsi" name="deskripsi"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Harga:</td>
+                        <td colspan="3"><input type="number" class="form-control w-full" id="harga" name="harga"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class=" flex justify-end">
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -39,7 +67,7 @@
 
 </html>
 
-    <!-- @foreach ($nama as $index => $item)
+<!-- @foreach ($nama as $index => $item)
     Nama produk {{$index + 1}}: {{$item}} <br>
     Deskripsi produk {{$index + 1}}: {{ $desc[$index]}} <br>
     Nama produk {{$index + 1}}: {{ $harga[$index]}} <br>
