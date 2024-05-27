@@ -20,12 +20,23 @@ class ListProdukController extends Controller
 
     public function simpan(Request $request)
     {
-    $produk = new Produk;
-    $produk->nama = $request->input('nama');
-    $produk->deskripsi = $request->input('deskripsi');
-    $produk->harga = $request->input('harga');
-    $produk->save();
+        $produk = new Produk;
+        $produk->nama = $request->input('nama');
+        $produk->deskripsi = $request->input('deskripsi');
+        $produk->harga = $request->input('harga');
+        $produk->save();
 
-    return redirect()->back()->with('Success', 'Data berhasil disimpan!');
+        return redirect()->back()->with('Success', 'Data berhasil disimpan!');
+    }
+
+    public function delete($id)
+    {
+        $produk = Produk::where('id', $id)->first();
+        if ($produk) {
+            $produk->delete();
+            return redirect()->back()->with('Success', 'Produk berhasil dihapus!');
+        } else {
+            return redirect()->back()->with('Error', 'Produk tidak ditemukan!');
+        }
     }
 }

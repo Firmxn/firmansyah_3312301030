@@ -17,6 +17,7 @@
                     <th class="border border-collapse">Nama Produk</th>
                     <th class="border border-collapse">Deskripsi Produk</th>
                     <th class="border border-collapse">Harga Produk</th>
+                    <th class="border border-collapse">Action</th>
                 </tr>
             </thead>
             <tbody class="text-blue-950 bg-white">
@@ -26,6 +27,13 @@
                     <td class="border border-collapse">{{$item}}</td>
                     <td class="border border-collapse">{{ $desc[$index]}}</td>
                     <td class="border border-collapse">{{ $harga[$index]}}</td>
+                    <td class="border border-collapse">
+                        <form action="{{ route('produk.delete', 'id') }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" onclick="return confirm('Are you sure you want to delete {{ $item }}?')">Delete</button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
